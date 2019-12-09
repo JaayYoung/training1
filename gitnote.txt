@@ -1,0 +1,40 @@
+  默认安装，完成配置
+
+创建仓库
+
+
+
+.git 才是版本控制器
+Git add 文件名.后缀
+Git commit -m "提交文件" -m 是说明
+保存文件的是40位随机生成16进制数
+
+Git clone  git_test test(克隆项目名)
+
+两个开发者都在自己项目添加了文件夹和文件
+
+分别添加缓存区(add)和提交(commit)
+
+进入git_test (git ../git_test,返回上一级，然后进入test)
+Git pull ../test
+
+到这里，git_test主项目，就有了从结点的新修改文件
+
+如果从test分支中，只需要git pull 即可，主节点有记录其路径
+
+外面的项目，想要合并，需要初始化仓库
+Lianliankan 项目文件
+进入文件夹 git init 初始化为空仓库
+Git pull https://github.com/yinruirui080301/lianliankan.git master master(拉它的master分支)
+
+
+需要创建一个中央仓库
+回到项目主目录 git..
+创建一个裸版本库
+Git clone --bare git_test baretest.git 
+修改文件后，添加提交到test中，不然会提示全是最新的
+Cd test
+Git push ../baretest.git 上传到中央仓库
+
+Cd ../git_test 
+Git pull ../baretest.git 主项目去拉
